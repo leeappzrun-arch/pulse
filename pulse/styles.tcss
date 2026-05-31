@@ -9,6 +9,7 @@ Screen {
     height: auto;
     text-align: center;
     padding: 1 2 0 2;
+    background: transparent;
 }
 
 #main-row {
