@@ -117,7 +117,9 @@ class PulseApp(App):
 
     def _apply_theme(self) -> None:
         t = self._theme
-        self.screen.styles.background = t.bg
+        # Use bg_panel for everything so the whole screen is one uniform colour.
+        # The logo is transparent so it inherits from the screen.
+        self.screen.styles.background = t.bg_panel
         self.query_one("#logo", Static).styles.background = "transparent"
         for gauge in self.query(ArcGauge):
             gauge.styles.background = t.bg_panel
